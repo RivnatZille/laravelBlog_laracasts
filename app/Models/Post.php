@@ -18,5 +18,15 @@ class Post extends Model
 //    protected $guarded = ['title'];
 
     // Also, you can disable mass assignment completely, but declaring a blank guarded property, just like below
-//    protected $guarded = [];
+    protected $guarded = [];
+
+//    public function getRouteKeyName()
+//    {
+//        return 'slug';
+//    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
