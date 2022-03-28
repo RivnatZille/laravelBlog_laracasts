@@ -18,7 +18,7 @@ class Post extends Model
 //    protected $guarded = ['title'];
 
     // Also, you can disable mass assignment completely, but declaring a blank guarded property, just like below
-    protected $guarded = [];
+//    protected $guarded = [];
 
 //    public function getRouteKeyName()
 //    {
@@ -47,6 +47,11 @@ class Post extends Model
                 $query->where('username', $author)
             )
         );
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 
     public function category()
